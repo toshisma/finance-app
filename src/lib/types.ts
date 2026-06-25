@@ -128,7 +128,7 @@ export const GOAL_ICONS = [
   'star'
 ] as const;
 
-export const COLORS = [
+export const COLORS: string[] = [
   '#8b5cf6',
   '#3b82f6',
   '#10b981',
@@ -137,7 +137,7 @@ export const COLORS = [
   '#ec4899',
   '#6366f1',
   '#14b8a6'
-] as const;
+];
 
 export interface DashboardStats {
   totalBalance: number;
