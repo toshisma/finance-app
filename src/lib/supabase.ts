@@ -50,93 +50,40 @@ export type Database = {
           updated_at?: string;
         };
       };
-      accounts: {
-        Row: {
-          id: string;
-          user_id: string;
-          name: string;
-          type: string;
-          balance: number;
-          currency: string;
-          color: string;
-          icon: string;
-          is_shared: boolean;
-          created_at: string;
-          updated_at: string;
-        };
-        Insert: {
-          id?: string;
-          user_id: string;
-          name: string;
-          type: string;
-          balance?: number;
-          currency?: string;
-          color?: string;
-          icon?: string;
-          is_shared?: boolean;
-          created_at?: string;
-          updated_at?: string;
-        };
-        Update: {
-          id?: string;
-          user_id?: string;
-          name?: string;
-          type?: string;
-          balance?: number;
-          currency?: string;
-          color?: string;
-          icon?: string;
-          is_shared?: boolean;
-          created_at?: string;
-          updated_at?: string;
-        };
-      };
       transactions: {
         Row: {
           id: string;
           user_id: string;
-          account_id: string | null;
           amount: number;
-          type: string;
+          type: 'income' | 'expense';
           category: string;
-          subcategory: string | null;
-          description: string | null;
+          description: string;
           date: string;
           is_shared: boolean;
-          is_recurring: boolean;
-          recurrence_interval: string | null;
           created_at: string;
           updated_at: string;
         };
         Insert: {
           id?: string;
           user_id: string;
-          account_id?: string | null;
           amount: number;
-          type: string;
+          type: 'income' | 'expense';
           category: string;
-          subcategory?: string | null;
-          description?: string | null;
-          date?: string;
+          description: string;
+          date: string;
           is_shared?: boolean;
-          is_recurring?: boolean;
-          recurrence_interval?: string | null;
           created_at?: string;
           updated_at?: string;
         };
         Update: {
           id?: string;
           user_id?: string;
-          account_id?: string | null;
           amount?: number;
-          type?: string;
+          type?: 'income' | 'expense';
           category?: string;
-          subcategory?: string | null;
-          description?: string | null;
+          description?: string;
           date?: string;
           is_shared?: boolean;
-          is_recurring?: boolean;
-          recurrence_interval?: string | null;
           created_at?: string;
           updated_at?: string;
         };
@@ -146,8 +93,8 @@ export type Database = {
           id: string;
           user_id: string;
           category: string;
-          amount_limit: number;
-          period: string;
+          amount: number;
+          period: 'monthly' | 'yearly';
           is_shared: boolean;
           created_at: string;
           updated_at: string;
@@ -156,8 +103,8 @@ export type Database = {
           id?: string;
           user_id: string;
           category: string;
-          amount_limit: number;
-          period?: string;
+          amount: number;
+          period: 'monthly' | 'yearly';
           is_shared?: boolean;
           created_at?: string;
           updated_at?: string;
@@ -166,25 +113,22 @@ export type Database = {
           id?: string;
           user_id?: string;
           category?: string;
-          amount_limit?: number;
-          period?: string;
+          amount?: number;
+          period?: 'monthly' | 'yearly';
           is_shared?: boolean;
           created_at?: string;
           updated_at?: string;
         };
       };
-      goals: {
+      savings_goals: {
         Row: {
           id: string;
           user_id: string;
           title: string;
-          description: string | null;
           target_amount: number;
           current_amount: number;
           deadline: string | null;
           is_shared: boolean;
-          color: string;
-          icon: string;
           created_at: string;
           updated_at: string;
         };
@@ -192,13 +136,10 @@ export type Database = {
           id?: string;
           user_id: string;
           title: string;
-          description?: string | null;
           target_amount: number;
           current_amount?: number;
           deadline?: string | null;
           is_shared?: boolean;
-          color?: string;
-          icon?: string;
           created_at?: string;
           updated_at?: string;
         };
@@ -206,44 +147,12 @@ export type Database = {
           id?: string;
           user_id?: string;
           title?: string;
-          description?: string | null;
           target_amount?: number;
           current_amount?: number;
           deadline?: string | null;
           is_shared?: boolean;
-          color?: string;
-          icon?: string;
           created_at?: string;
           updated_at?: string;
-        };
-      };
-      notifications: {
-        Row: {
-          id: string;
-          user_id: string;
-          title: string;
-          message: string | null;
-          type: string;
-          is_read: boolean;
-          created_at: string;
-        };
-        Insert: {
-          id?: string;
-          user_id: string;
-          title: string;
-          message?: string | null;
-          type?: string;
-          is_read?: boolean;
-          created_at?: string;
-        };
-        Update: {
-          id?: string;
-          user_id?: string;
-          title?: string;
-          message?: string | null;
-          type?: string;
-          is_read?: boolean;
-          created_at?: string;
         };
       };
     };
