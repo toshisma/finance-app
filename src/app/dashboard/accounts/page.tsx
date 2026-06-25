@@ -158,7 +158,7 @@ export default function AccountsPage() {
                         className="w-12 h-12 rounded-xl flex items-center justify-center"
                         style={{ backgroundColor: `${account.color}20` }}
                       >
-                        <IconComponent className="w-6 h-6" style={{ color: account.color }} />
+                        <IconComponent className="w-6 h-6" color={account.color} />
                       </div>
                       <div>
                         <h3 className="font-semibold text-white">{account.name}</h3>
