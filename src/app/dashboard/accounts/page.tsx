@@ -9,7 +9,7 @@ import { useAccounts } from '@/hooks/useAccounts';
 import { formatCurrency, cn } from '@/lib/utils';
 import { Account, AccountType, COLORS, ACCOUNT_ICONS } from '@/lib/types';
 
-const accountTypeIcons: Record<string, React.ComponentType<{ className?: string }>> = {
+const accountTypeIcons: Record<string, React.ComponentType<{ className?: string; color?: string; style?: React.CSSProperties }>> = {
   checking: Wallet,
   savings: PiggyBank,
   credit: CreditCard,
